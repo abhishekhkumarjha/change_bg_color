@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Change Background Color</title>
+  <style>
+    /* Center the button */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: white;
+    }
+
+    #changeColorButton {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border-radius: 8px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    #changeColorButton:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <button id="changeColorButton">Change Color</button>
+
+  <script>
+    let colorButton = document.getElementById("changeColorButton");
+    let colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+    let currentIndex = 0;
+
+    colorButton.addEventListener("click", function() {
+      document.body.style.backgroundColor = colors[currentIndex];
+      currentIndex = (currentIndex + 1) % colors.length;
+    });
+  </script>
+</body>
+</html>
